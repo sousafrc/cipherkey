@@ -7,37 +7,37 @@ const Home: NextPage = () => {
         <h1 className="z-10 text-2xl font-bold text-slate-100 xxs:text-6xl xs:text-7xl sm:text-8xl">
           CipherKey
         </h1>
-        <h5 className="text-center text-xs text-slate-500 xs:self-end sm:text-xl">
+        <h5 className="text-center text-xs text-slate-500 xs:self-center sm:text-xl">
         A Chave é a Chave
         </h5>
-        <form className="mt-5 flex w-full flex-col items-center justify-center gap-y-5 text-center text-xs xxs:text-base">
+        <form className="z-10 mt-5 flex w-full flex-col items-center justify-center gap-y-5 text-center text-xs xxs:text-base">
           <div className="flex w-full flex-col items-center justify-center">
-            <label className="input-label">Website Name</label>
+            <label className="input-label">Website</label>
             <input
               type="text"
               name="website"
               className="input-text"
-              placeholder="Example: reddit, google"
+              placeholder="google.com, app.geztor.com.br"
             />
           </div>
           <div className="flex w-full flex-col items-center justify-center">
-            <label className="input-label">Username</label>
+            <label className="input-label">Nome usuário</label>
             <input
               type="text"
               name="username"
               className="input-text"
-              placeholder="Example: sousafrc"
+              placeholder="a_tur1ng, turing@gmail.com"
             />
           </div>
           <div className="flex w-full flex-col items-center justify-center">
             <label className="input-label">
-            Código Secreto - Usado para todas as CipherKeys
+            Chave secreta - Usado para todas as CipherKeys
             </label>
             <input
               type="text"
               name="passphrase"
               className="input-text"
-              placeholder="Example: mylittlepony"
+              placeholder="Ktchau!Velocidade95$"
             />
           </div>
           <button
