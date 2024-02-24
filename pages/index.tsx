@@ -4,8 +4,8 @@ import { useState } from "react";
 const Home: NextPage = () => {
   const [website, setWebsite] = useState("");
   const [username, setUsername] = useState("");
-  const [cipherkey, setCipherKey] = useState("");
-  const [cipherkey, setCipherKey] = useState("");
+  const [password, setPassword] = useState("");
+  const [cipherkey, setCipher] = useState("");
 
   const submitHandler = () => {};
 
