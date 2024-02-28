@@ -1,37 +1,37 @@
 import jsSHA from "jssha";
+import bigInt from "big-integer";
+import * as bigintConversion from "bigint-conversion";
 
-const asciiLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const digits = "0123456789";
-const punctutation = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
-const passwordCharacters = asciiLetters;
+const symbols = ".$#@";
+const passwordCharacters = alphabets + digits + symbols;
+console.log("🚀 => passwordCharacters.length", passwordCharacters.length);
 const length = 20;
 
 export const generateCipherKey = (toHash: string): string => {
-  const shaObj = new jsSHA("SHA3-512", "TEXT", { encoding: "UTF8" });
+  // Configurando a geração do SHA
+  const shaObj = new jsSHA("SHA3-512", "TEXT", { encoding: "UTF16BE" });
   shaObj.update(toHash);
 
-  const hashInBytes = shaObj.getHash("UINT8ARRAY");
-  let integerFromBytes = BigInt(
-    Buffer.from(hashInBytes).readUIntBE(0, hashInBytes.length)
-  );
+  // Gerar soma SHA3-512 para 'hashear' a string
+  let hashBase64 = shaObj.getHash("B64");
+  let hashBigInteger = bigInt(bigintConversion.base64ToBigint(hashBase64));
 
   let cipherkey = "";
-
   for (let i = 0; i < length; i++) {
-    let result = passwordCharacters;
-    while (result.length > 1) {
-      if (integerFromBytes & BigInt(1)) {
-        const resultLength = Math.ceil(result.length / 2);
-        result = result.slice(0, resultLength);
+    let charSubstring = passwordCharacters;
+    while (charSubstring.length > 1) {
+      if (hashBigInteger.isOdd()) {
+        charSubstring = charSubstring.slice(0, charSubstring.length / 2);
       } else {
-        const resultLength = Math.ceil(result.length / 2);
-        result = result.slice(resultLength, result.length);
+        charSubstring = charSubstring.slice(charSubstring.length / 2);
       }
-      integerFromBytes = BigInt(integerFromBytes >> BigInt(1));
+      hashBigInteger = hashBigInteger.shiftRight(1);
     }
-    cipherkey += result;
-    console.log("🚀 => generateCipherKey => cipherkey", cipherkey);
+    cipherkey += charSubstring;
   }
+  console.log("🚀 => generateCipherKey => cipherkey", cipherkey);
 
   return cipherkey;
 };
