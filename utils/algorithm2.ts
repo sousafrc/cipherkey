@@ -39,7 +39,6 @@ export const generateCipherKey = (
     // Anexa o caractere da string codificada no CipherKey
     cipherkey += encodedHash[i];
   }
-  console.log("🚀 => cipherkey", cipherkey);
 
   return cipherkey;
 };
