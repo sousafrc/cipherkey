@@ -71,7 +71,7 @@ const Home: NextPage = () => {
           <h1 className="background-animate z-10 text-2xl font-bold text-slate-50 xxs:text-6xl xs:text-7xl sm:text-8xl">
             Cipher Key
           </h1>
-          <h5 className="z-10 text-center text-xs font-medium text-slate-300  xs:self-end sm:text-xl">
+          <h5 className="z-10 text-center text-xs font-semibold text-slate-400 xxs:text-lg xs:self-end sm:text-xl">
             A Chave é a Chave
           </h5>
 
@@ -134,14 +134,19 @@ const Home: NextPage = () => {
             </div>
           </form>
         </main>
-        {/* Gradiente */}
+        {/* Ciano (mid top right */}
         <div className="absolute top-[15%] left-[55%] z-0 h-96 w-52 rounded-full bg-cyan-500 opacity-30 mix-blend-exclusion blur-6xl filter sm:w-96"></div>
-        <div className="absolute left-[40%] z-0 h-4/5 w-24 -rotate-45 animate-blob2 rounded-full bg-gradient-to-t from-cyan-500 to-violet-600 opacity-30 blur-6xl sm:w-96"></div>
-        <div className="absolute left-[80%] -top-[30%] z-0 h-4/5 w-24 -rotate-45 animate-blob rounded-full bg-gradient-to-t from-cyan-500 to-purple-600 opacity-30 blur-6xl sm:w-96"></div>
-        <div className="absolute -left-[10%] -bottom-[20%] z-0 h-4/5 w-24 rotate-45 animate-blob3 rounded-full bg-gradient-to-t from-purple-500 to-cyan-600 opacity-30 blur-6xl sm:w-96"></div>
-        <div className="absolute top-[35%] left-[40%] z-0 h-1/2 w-24 animate-blob2 rounded-full bg-purple-500 opacity-30 mix-blend-exclusion blur-6xl filter sm:w-96"></div>
-        <div className="absolute bottom-10 right-10 z-0 h-96 w-24 rotate-45 transform animate-blob bg-purple-500 opacity-50 mix-blend-exclusion blur-6xl filter first-letter:rounded-full"></div>
-        <div
+        {/* Violeta (center) */}
+        <div className="absolute left-[40%] z-0 h-4/5 w-24 -rotate-45 rounded-full bg-gradient-to-t from-cyan-500 to-violet-600 opacity-30 blur-6xl sm:w-96 md:animate-blob2"></div>
+        {/* Azul 'roxeado' (right top corner) */}
+        <div className="absolute left-[80%] -top-[30%] z-0 h-4/5 w-24 -rotate-45 rounded-full bg-gradient-to-t from-cyan-500 to-purple-600 opacity-30 blur-6xl sm:w-96 md:animate-blob"></div>
+        {/* Roxo 'azulado' (left) */}
+        <div className="absolute -left-[10%] -bottom-[20%] z-0 h-4/5 w-24 rotate-45 rounded-full bg-gradient-to-t from-purple-500 to-cyan-600 opacity-30 blur-6xl sm:w-96 md:animate-blob3"></div>
+        {/* Roxo (center) */}
+        <div className="absolute top-[35%] left-[40%] z-0 h-1/2 w-24 rounded-full bg-purple-500 opacity-30 mix-blend-exclusion blur-6xl filter sm:w-96 md:animate-blob2"></div>
+        {/* Roxo (bottom right) */}
+        <div className="absolute bottom-10 right-10 z-0 h-96 w-24 rotate-45 transform bg-purple-500 opacity-50 mix-blend-exclusion blur-6xl filter first-letter:rounded-full md:animate-blob"></div>
+
           className={`absolute bottom-5 flex flex-col items-center gap-5 text-slate-400`}
           style={{ opacity: opacity }}
         >
@@ -149,6 +154,9 @@ const Home: NextPage = () => {
           Role a página para entender melhor
         </div>
       </div>
+      <div className="bg-gradient-to-br from-[#090e14] to-[#0d0511] pt-10">
+      <img src="/por-que-usar-cipherkey.svg" className="mx-auto" />
+    </div>
       <Section1 />
       <Section2 />
       <Section3 />
