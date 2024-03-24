@@ -1,1 +1,1 @@
-Algoritmo CipherKey: 
+Algoritmo Cipher Key: 

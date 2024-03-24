@@ -29,7 +29,7 @@ const StepsSection = () => {
         <h2 className="z-10 text-3xl font-medium text-slate-500">
           Você ainda tá preso nos anos 90?{" "}
           <span className="font-semibold text-slate-300">
-            CipherKey é o Futuro
+            Cipher Key é o Futuro
           </span>{" "}
         </h2>
       </div>
@@ -73,25 +73,25 @@ const StepsSection = () => {
             </motion.h4>
             <motion.p className="mt-5 w-4/5 text-xl text-slate-300">
               {step === 0 && [
-                "Uma CipherKey é uma senha única. É uma senha criptograficamente forte que é gerada usando os detalhes da sua conta.",
+                "Uma Cipher Key é uma senha única. É uma senha criptograficamente forte que é gerada usando os detalhes da sua conta.",
                 <br />,
                 <br />,
-                "Tudo o que você precisa para gerar uma CipherKey é o site, seu nome de usuário nesse site e uma chave.",
+                "Tudo o que você precisa para gerar uma Cipher key é o site, seu nome de usuário nesse site e uma chave.",
               ]}
               {step === 1 && [
                 "Sua chave é única para você. Pode ser qualquer coisa, a data de nascimento do seu filho seguida pelo nome do seu animal de estimação, seu personagem de videogame favorito seguido do seu número favorito.",
                 <br />,
                 <br />,
-                "Esta chave deve ser única para você e é a única coisa que você precisa lembrar. A mesma chave ajudará você a gerar CipherKeys para milhares de outros sites. Uma única chave é tudo o que você precisa para gerar Cipherkeys únicas para todas as suas contas.",
+                "Esta chave deve ser única para você e é a única coisa que você precisa lembrar. A mesma chave ajudará você a gerar Cipher keys para milhares de outros sites. Uma única chave é tudo o que você precisa para gerar Cipher keys únicas para todas as suas contas.",
               ]}
               {step === 2 && [
                 "Nenhuma informação jamais sai do seu computador.",
                 <br />,
                 <br />,
-                "CipherKey é criptograficamente seguro e funciona sem internet.",
+                "Cipher Key é criptograficamente seguro e funciona sem internet.",
                 <br />,
                 <br />,
-                "CipherKey tem o código 100% aberto, então você sabe que é seguro.",
+                "Cipher Key tem o código 100% aberto, então você sabe que é seguro.",
               ]}
             </motion.p>
           </div>

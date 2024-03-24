@@ -8,6 +8,9 @@ import Tilt from "react-parallax-tilt";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import StepsSection from "../components/StepsSection";
+import Section1 from "../components/Section1";
+import Section2 from "../components/Section2";
+import Section3 from "../components/Section3";
 
 const Home: NextPage = () => {
   const [website, setWebsite] = useState("");
@@ -56,26 +59,17 @@ const Home: NextPage = () => {
 
     setCipherKey(cipheredCipherKey);
     window.navigator.clipboard.writeText(cipheredCipherKey);
-    toast.success("CipherKey copiada para a área de transferência!");
+    toast.success("Cipher key copiada para a área de transferência!");
   };
 
   return (
-    <div className="relative snap-y snap-mandatory overflow-x-hidden bg-gradient-to-br from-[#0d0511] to-[#090e14]">
-      <div className="animate page-root animate relative snap-start bg-gradient-to-br">
-        {/* Gradiente */}
-        <div className="absolute top-[15%] left-[55%] h-96 w-96 rounded-full bg-cyan-500 opacity-30 mix-blend-exclusion blur-6xl filter"></div>
-       
-        <div className="absolute left-[40%] h-4/5 w-96 -rotate-45 animate-blob2 rounded-full bg-gradient-to-t from-cyan-500 to-violet-600 opacity-30 blur-6xl"></div>
-        <div className="absolute left-[80%] -top-[30%] h-4/5 w-96 -rotate-45 animate-blob rounded-full bg-gradient-to-t from-cyan-500 to-purple-600 opacity-30 blur-6xl"></div>
-        <div className="absolute -left-[10%] -bottom-[20%] h-4/5 w-96 rotate-45 animate-blob3 rounded-full bg-gradient-to-t from-purple-500 to-cyan-600 opacity-30 blur-6xl"></div>
-        <div className="absolute top-[35%] left-[40%] h-1/2 w-96 animate-blob2 rounded-full bg-purple-500 opacity-30 mix-blend-exclusion blur-6xl filter"></div>
-        <div className="absolute bottom-10 right-10 h-96 w-24 rotate-45 transform animate-blob bg-purple-500 opacity-50 mix-blend-exclusion blur-6xl filter first-letter:rounded-full"></div>
-
+    <div className="overflow-x-hidden bg-gradient-to-br from-[#0d0511] to-[#090e14]">
+      <div className="animate page-root animate relative bg-gradient-to-br">
         {/* Seção do topo */}
         <main className="flex flex-col items-center justify-center">
           {/* Logo */}
           <h1 className="background-animate z-10 text-2xl font-bold text-slate-50 xxs:text-6xl xs:text-7xl sm:text-8xl">
-            CipherKey
+            Cipher Key
           </h1>
           <h5 className="z-10 text-center text-xs font-medium text-slate-300  xs:self-end sm:text-xl">
             A Chave é a Chave
@@ -124,7 +118,7 @@ const Home: NextPage = () => {
               />
             </div>
             <button type="submit" className="submit-button">
-              Obter CipherKey 😎
+              Obter Cipher key 😎
             </button>
             <div
               className={`${cipherkey.length < 1
@@ -132,7 +126,7 @@ const Home: NextPage = () => {
                   : "scale-y-100 opacity-100"
                 } animate relative mt-4 w-4/5 cursor-pointer rounded-xl bg-green-500 py-2 backdrop-blur-xl duration-500 hover:shadow-lg hover:shadow-green-400/30 hover:ring-1 hover:ring-green-200`}
             >
-              <p className="select-none font-medium text-green-300">CipherKey</p>
+              <p className="select-none font-medium text-green-300">Cipher Key</p>
               <p className="select-all font-medium text-green-100">
                 {cipherkey}
               </p>
@@ -140,6 +134,13 @@ const Home: NextPage = () => {
             </div>
           </form>
         </main>
+        {/* Gradiente */}
+        <div className="absolute top-[15%] left-[55%] z-0 h-96 w-52 rounded-full bg-cyan-500 opacity-30 mix-blend-exclusion blur-6xl filter sm:w-96"></div>
+        <div className="absolute left-[40%] z-0 h-4/5 w-24 -rotate-45 animate-blob2 rounded-full bg-gradient-to-t from-cyan-500 to-violet-600 opacity-30 blur-6xl sm:w-96"></div>
+        <div className="absolute left-[80%] -top-[30%] z-0 h-4/5 w-24 -rotate-45 animate-blob rounded-full bg-gradient-to-t from-cyan-500 to-purple-600 opacity-30 blur-6xl sm:w-96"></div>
+        <div className="absolute -left-[10%] -bottom-[20%] z-0 h-4/5 w-24 rotate-45 animate-blob3 rounded-full bg-gradient-to-t from-purple-500 to-cyan-600 opacity-30 blur-6xl sm:w-96"></div>
+        <div className="absolute top-[35%] left-[40%] z-0 h-1/2 w-24 animate-blob2 rounded-full bg-purple-500 opacity-30 mix-blend-exclusion blur-6xl filter sm:w-96"></div>
+        <div className="absolute bottom-10 right-10 z-0 h-96 w-24 rotate-45 transform animate-blob bg-purple-500 opacity-50 mix-blend-exclusion blur-6xl filter first-letter:rounded-full"></div>
         <div
           className={`absolute bottom-5 flex flex-col items-center gap-5 text-slate-400`}
           style={{ opacity: opacity }}
@@ -148,8 +149,9 @@ const Home: NextPage = () => {
           Role a página para entender melhor
         </div>
       </div>
-      <HeroSection />
-      <StepsSection />
+      <Section1 />
+      <Section2 />
+      <Section3 />
       <ToastContainer position="top-center" theme="colored" />
     </div>
   );
