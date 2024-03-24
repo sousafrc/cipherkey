@@ -47,7 +47,7 @@ const Home: NextPage = () => {
       return;
     }
     if (username.length < 1) {
-      toast.error("informe um nome de usuário! ");
+      toast.error("Informe um nome de usuário!");
       return;
     }
     if (password.length < 1) {
@@ -122,8 +122,8 @@ const Home: NextPage = () => {
             </button>
             <div
               className={`${cipherkey.length < 1
-                  ? "scale-y-0 opacity-0"
-                  : "scale-y-100 opacity-100"
+                ? "scale-y-0 opacity-0"
+                : "scale-y-100 opacity-100"
                 } animate relative mt-4 w-4/5 cursor-pointer rounded-xl bg-green-500 py-2 backdrop-blur-xl duration-500 hover:shadow-lg hover:shadow-green-400/30 hover:ring-1 hover:ring-green-200`}
             >
               <p className="select-none font-medium text-green-300">Cipher Key</p>
@@ -134,7 +134,7 @@ const Home: NextPage = () => {
             </div>
           </form>
         </main>
-        {/* Ciano (mid top right */}
+        {/* Ciano (mid top right) */}
         <div className="absolute top-[15%] left-[55%] z-0 h-96 w-52 rounded-full bg-cyan-500 opacity-30 mix-blend-exclusion blur-6xl filter sm:w-96"></div>
         {/* Violeta (center) */}
         <div className="absolute left-[40%] z-0 h-4/5 w-24 -rotate-45 rounded-full bg-gradient-to-t from-cyan-500 to-violet-600 opacity-30 blur-6xl sm:w-96 md:animate-blob2"></div>
@@ -147,6 +147,7 @@ const Home: NextPage = () => {
         {/* Roxo (bottom right) */}
         <div className="absolute bottom-10 right-10 z-0 h-96 w-24 rotate-45 transform bg-purple-500 opacity-50 mix-blend-exclusion blur-6xl filter first-letter:rounded-full md:animate-blob"></div>
 
+        <div
           className={`absolute bottom-5 flex flex-col items-center gap-5 text-slate-400`}
           style={{ opacity: opacity }}
         >
@@ -155,8 +156,8 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className="bg-gradient-to-br from-[#090e14] to-[#0d0511] pt-10">
-      <img src="/por-que-usar-cipherkey.svg" className="mx-auto" />
-    </div>
+        <img src="/por-que-usar-cipherkey.svg" className="mx-auto" />
+      </div>
       <Section1 />
       <Section2 />
       <Section3 />
